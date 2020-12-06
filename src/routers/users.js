@@ -11,7 +11,7 @@ router
   .get('/:id/transactions-history',verifyAccess,accountVerification,getDetailUser,getTransHistory)
   .post('/register', uploadMulter.single('image'), registerUser)
   .put('/:id/updatepassword',verifyAccess,accountVerification, updatePassword)
-  .put('/verify/:sendid',verifyAccess,accountVerification,verifyAccount)
+  .put('/verify/:sendid',verifyAccount)
   .put('/:id/updateimage',verifyAccess,accountVerification,uploadMulter.single('image'), updateImage)
   .post('/login', loginUser)
   .post('/email', verifyAccess,accountVerification, sendEmail)
