@@ -13,6 +13,17 @@ const users = {
       })
     })
   },
+  checkPassword: (id) => {
+    return new Promise((resolve, reject) => {
+      connection.query('SELECT * FROM account WHERE id = ?', id, (error, results) => {
+        if (!error) {
+          resolve(results)
+        } else {
+          reject(error)
+        }
+      })
+    })
+  },
   insertUsers: (data) => {
     return new Promise((resolve, reject) => {
       connection.query('INSERT INTO account SET ?', data, (error, results) => {
@@ -54,7 +65,7 @@ const users = {
       page = 1
     }
     return new Promise((resolve, reject) => {
-      connection.query(`SELECT account.username, transactions.id, transactions.amountIn, transactions.amountOut, transactions.datetime, transactions.notes, addreceiver.receivername, action.actionName from account INNER JOIN transactions ON transactions.accountid_transactions = account.id LEFT JOIN addreceiver ON addreceiver.id = transactions.transferto  INNER jOIN action ON action.actionId=transactions.actionid_transactions WHERE account.id = ? ORDER BY ${sortData} ${typeSort} `, id, (error, results) => {
+      connection.query(`SELECT account.username, transactions.id, transactions.amountIn, transactions.amountOut, transactions.datetime, transactions.notes, addreceiver.receivername, addreceiver.receiverphone, action.actionName from account INNER JOIN transactions ON transactions.accountid_transactions = account.id LEFT JOIN addreceiver ON addreceiver.id = transactions.transferto  INNER jOIN action ON action.actionId=transactions.actionid_transactions WHERE account.id = ? ORDER BY ${sortData} ${typeSort} `, id, (error, results) => {
         if (!error) {
           resolve(results)
         } else {
@@ -65,7 +76,7 @@ const users = {
   },
   getProfile: (id, page, limit) => {
     return new Promise((resolve, reject) => {
-      connection.query(`SELECT account.firstName, account.lastname, account.main_phone, account.email, account.image FROM account WHERE account.id = ?`, id, (error, results) => {
+      connection.query(`SELECT account.firstName, account.lastname, account.mainPhone, account.email, account.image FROM account WHERE account.id = ?`, id, (error, results) => {
         if (!error) {
           resolve(results)
         } else {
@@ -85,24 +96,25 @@ const users = {
       })
     })
   },
-  getSearchReceiver: (id, page, limit,search,name) => {
+  getSearchReceiver: (id, page, limit,search) => {
     return new Promise((resolve, reject) => {
       if (search) {
-        connection.query(`SELECT account.id, addreceiver.receivername, addreceiver.receiverphone FROM account INNER JOIN addreceiver ON account.id = addreceiver.accountid_receiver WHERE addreceiver.receivername LIKE ? AND account.id = ?`,[search,id], (error, results) => {
+        connection.query(`SELECT account.username, addreceiver.*, action.actionName FROM account INNER JOIN addreceiver ON account.id = addreceiver.accountid_receiver INNER JOIN action ON addreceiver.transferId = action.actionId WHERE addreceiver.receivername LIKE ? AND account.id = ?`,[`%${search}%`,id], (error, results) => {
           if (!error) {
             resolve(results)
           } else {
             reject(error)
           }
         })
-      } else {}
-      connection.query(`SELECT account.id, addreceiver.receivername, addreceiver.receiverphone FROM account INNER JOIN addreceiver ON account.id = addreceiver.accountid_receiver WHERE account.id = ?`, id, (error, results) => {
+      } else {
+        connection.query(`SELECT addreceiver.id, addreceiver.receivername, addreceiver.receiverphone, action.actionName FROM account INNER JOIN addreceiver ON account.id = addreceiver.accountid_receiver INNER JOIN action ON addreceiver.transferId = action.actionId WHERE account.id = ?`, id, (error, results) => {
         if (!error) {
           resolve(results)
         } else {
           reject(error)
         }
       })
+      }
     })
   },
   deleteUsers: (id) => {
@@ -118,7 +130,7 @@ const users = {
   },
   getUsers: () => {
     return new Promise((resolve, reject) => {
-      connection.query(`SELECT firstname, lastname, main_phone,email FROM account`, (error, results) => {
+      connection.query(`SELECT firstname, lastname, mainPhone,email FROM account`, (error, results) => {
         if (!error) {
           resolve(results)
         } else {

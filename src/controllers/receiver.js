@@ -18,13 +18,31 @@ const search = {
         return helpers.response(res, null, 500, { message: 'problem with database' })
       })
   },
-  insertSearch: (req, res) => {
+  insertTransfer: (req, res) => {
     const { receivername, receiverphone, accountid_receiver } = req.body
     const data = {
       receivername, 
       receiverphone,
       accountid_receiver,
       transferId : 2
+    }
+    modelSearch.insertSearch(data)
+      .then(result => {
+        const resultSearch = result
+        helpers.response(res, resultSearch, 201, null)
+      })
+      .catch((err) => {
+        console.log(err)
+        return helpers.response(res, null, 500, { message: 'problem with database' })
+      })
+  },
+  insertSubscription: (req, res) => {
+    const { receivername, receiverphone, accountid_receiver } = req.body
+    const data = {
+      receivername, 
+      receiverphone,
+      accountid_receiver,
+      transferId : 3
     }
     modelSearch.insertSearch(data)
       .then(result => {

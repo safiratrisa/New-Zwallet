@@ -1,9 +1,20 @@
 const connection = require('../configs/db')
 
 const phone = {
-  getPhoneById: (id) => {
+  getPhoneByUserId: (id) => {
     return new Promise((resolve, reject) => {
       connection.query('SELECT account.username, accountphone.* FROM account INNER jOIN accountphone ON accountphone.accountid_phone=account.id WHERE account.id = ?', id, (error, results) => {
+        if (!error) {
+          resolve(results)
+        } else {
+          reject(error)
+        }
+      })
+    })
+  },
+  getPhoneById: (id) => {
+    return new Promise((resolve, reject) => {
+      connection.query('SELECT * from accountphone WHERE id = ?', id, (error, results) => {
         if (!error) {
           resolve(results)
         } else {

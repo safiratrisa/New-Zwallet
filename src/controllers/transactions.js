@@ -21,14 +21,44 @@ const transactions = {
         return helpers.response(res, null, 500, { message: 'problem with database' })
       })
   },
-  insertTransactions: (req, res) => {
-    const { amountIn, amountOut, notes, accountid_transactions, actionid_transactions,transferto } = req.body
+  getTransactionsStatus: (req, res) => {
+    modelTransactions.getTransactionsStatus()
+      .then(result => {
+        const resultTransactions = result
+        helpers.response(res, resultTransactions, 200, null)
+      })
+      .catch((err) => {
+        console.log(err)
+        return helpers.response(res, null, 500, { message: 'problem with database' })
+      })
+  },
+  insertTransfer: (req, res) => {
+    const { amountOut, notes, accountid_transactions,transferto } = req.body
     const data = {
-      amountIn,
       amountOut,
       notes,
       accountid_transactions,
-      actionid_transactions,
+      actionid_transactions:2,
+      transferto,
+      datetime: new Date()
+    }
+    modelTransactions.insertTransactions(data)
+    .then(result => {
+        const resultTransactions = result
+        return helpers.response(res, resultTransactions, 201, null)
+    })
+    .catch((err) => {
+        console.log(err)
+        return helpers.response(res, null, 500, { message: 'problem with database' })
+    })
+  },
+  insertSubscription: (req, res) => {
+    const { amountOut, notes, accountid_transactions,transferto } = req.body
+    const data = {
+      amountOut,
+      notes,
+      accountid_transactions,
+      actionid_transactions:3,
       transferto,
       datetime: new Date()
     }

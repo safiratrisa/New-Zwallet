@@ -3,7 +3,7 @@ const connection = require('../configs/db')
 const search = {
   getSearchById: (id) => {
     return new Promise((resolve, reject) => {
-      connection.query('SELECT account.username, addreceiver.* FROM account INNER jOIN addreceiver ON addreceiver.accountid_receiver=account.id WHERE account.id = ?', id, (error, results) => {
+      connection.query('SELECT addreceiver.*, action.actionName from addreceiver INNER JOIN action ON addreceiver.transferId = action.actionId  WHERE id = ?', id, (error, results) => {
         if (!error) {
           resolve(results)
         } else {

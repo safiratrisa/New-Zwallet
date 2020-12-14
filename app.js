@@ -18,6 +18,7 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 
 app.use('/upload', express.static('./upload'))
+app.use('/image', express.static('./image'))
 
 app.use('/users', routerUsers)
 app.use('/transactions', routerTransactions)

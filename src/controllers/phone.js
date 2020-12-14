@@ -1,6 +1,23 @@
 const modelPhone = require('../models/phone')
 const helpers = require('../helpers/helpers')
 const phone = {
+  getPhoneByUserId: (req, res, next) => {
+    const id = req.params.id
+    modelPhone.getPhoneByUserId(id)
+      .then(result => {
+        const resultPhone = result
+        if (resultPhone.length === 0) {
+          const error = new Error('id not found')
+          error.status = 404
+          return next(error)
+        }
+        helpers.response(res, resultPhone, 200, null)
+      })
+      .catch((err) => {
+        console.log(err)
+        return helpers.response(res, null, 500, { message: 'problem with database' })
+      })
+  },
   getPhoneById: (req, res, next) => {
     const id = req.params.id
     modelPhone.getPhoneById(id)
