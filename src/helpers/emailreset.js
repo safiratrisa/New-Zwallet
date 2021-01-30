@@ -71,7 +71,7 @@ exports.sendEmailReset = () =>{
                 <h4>Your verification code: ${senddata.resetid}</h4>
               </div>
               <div class="btn">
-                <button><a href="http://localhost:8080/auth/resetpass">Reset Password</a></button>
+                <button><a href=${link}>Reset Password</a></button>
               </div>
             </body>
             </html>`, // html body
