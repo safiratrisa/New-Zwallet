@@ -13,14 +13,3 @@ module.exports = {
     }
   }
   
-  // module.exports = {
-  //     responseError : (res, result, status, err)=>{
-  //         const resultPrint = {}
-  //         resultPrint.status = 'Not success'
-  //         resultPrint.statusCode = status
-  //         resultPrint.result = result
-  //         resultPrint.err = err || null
-  //         return res.status(resultPrint.statusCode).json(resultPrint)
-  //     }
-  // }
-  

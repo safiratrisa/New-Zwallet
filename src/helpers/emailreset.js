@@ -8,14 +8,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-exports.sendEmail = () =>{
+exports.sendEmailReset = () =>{
     return new Promise((resolve, reject)=>{
         host=process.env.FRONTEND_URL
-        link=host+'/verify?sendid='+senddata.sendid;
+        link=host+"/auth/resetpass/";
         const message = {
             from: process.env.EMAIL_USERNAME,
             to: senddata.email,
-            subject: "ACTIVATION EMAIL", 
+            subject: "Change Password", 
             html : `<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -67,11 +67,11 @@ exports.sendEmail = () =>{
             <body>
             <h2>ZWALLET</h2>
               <div class="wrapper">
-                <h3>Hi ${senddata.username}, Welcome to Zwallet!</h3>
-                <h4>Thanks for signing up with us! <br> Please Verify your Email by clicking the button below:</h4>
+                <h4>To change your password, please put the verification code to the Email Verification Code Field in Reset Password Page</h4>
+                <h4>Your verification code: ${senddata.resetid}</h4>
               </div>
               <div class="btn">
-                <button><a href=${link}>Verify My Email</a></button>
+                <button><a href="http://localhost:8080/auth/resetpass">Reset Password</a></button>
               </div>
             </body>
             </html>`, // html body

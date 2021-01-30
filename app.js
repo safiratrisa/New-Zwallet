@@ -7,7 +7,6 @@ const cors = require('cors')
 const routerUsers = require('./src/routers/users')
 const routerTransactions = require('./src/routers/transactions')
 const routerPhone = require('./src/routers/phone')
-const routerSearch = require('./src/routers/receiver')
 const bodyParser = require('body-parser')
 const helpers = require('./src/helpers/helpers')
 
@@ -23,7 +22,6 @@ app.use('/image', express.static('./image'))
 app.use('/users', routerUsers)
 app.use('/transactions', routerTransactions)
 app.use('/phone', routerPhone)
-app.use('/receiver', routerSearch)
 
 app.use((err, req, res, next) => {
   helpers.response(res, null, err.status, { message: err.message })

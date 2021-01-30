@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
      } else {
          cb({
              success: false,
-             message: 'Invalid file type. Only jpg, png image files are allowedd.'
+             message: 'Invalid file type. Only jpg, png image files are allowed.'
          }, false);
      }
  };
@@ -37,7 +37,7 @@ const storage = multer.diskStorage({
              if (error.code == 'LIMIT_FILE_SIZE') {
                  return helpers.response(res, null, 500, { message: 'File Size is too large. Allowed file size is 1Mb' })
              }
-             return helpers.response(res, null, 500, { message: 'Invalid file type. Only jpg, png image files are allowedd.' })
+             return helpers.response(res, null, 500, { message: 'Invalid file type. Only jpg, png image files are allowed.' })
          } else {
              if (!req.file) {
                  res.status(500);

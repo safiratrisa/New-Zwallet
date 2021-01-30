@@ -7,7 +7,6 @@ exports.verifyAccess = (req,res,next) => {
         return helpers.response(res, null, 401, {message : 'Server Need Token'}) 
     }
     let token = authorization.split(" ")
-    // console.log(token)
     token = token[1]
     jwt.verify(token, process.env.SECRET_KEY, function(err, decoded) {
         if (err) {

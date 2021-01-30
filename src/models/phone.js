@@ -1,9 +1,9 @@
 const connection = require('../configs/db')
 
 const phone = {
-  getPhoneByUserId: (id) => {
+  countPhone: (id) => {
     return new Promise((resolve, reject) => {
-      connection.query('SELECT account.username, accountphone.* FROM account INNER jOIN accountphone ON accountphone.accountid_phone=account.id WHERE account.id = ?', id, (error, results) => {
+      connection.query('SELECT COUNT(*) AS total FROM accountphone WHERE accountphone.accountId_phone = ?', id, (error, results) => {
         if (!error) {
           resolve(results)
         } else {
@@ -12,9 +12,9 @@ const phone = {
       })
     })
   },
-  getPhoneById: (id) => {
+  getPhoneByUserId: (id) => {
     return new Promise((resolve, reject) => {
-      connection.query('SELECT * from accountphone WHERE id = ?', id, (error, results) => {
+      connection.query('SELECT account.username, accountphone.* FROM account INNER jOIN accountphone ON accountphone.accountid_phone=account.id WHERE account.id = ?', id, (error, results) => {
         if (!error) {
           resolve(results)
         } else {
@@ -44,18 +44,7 @@ const phone = {
         }
       })
     })
-  },
-  updatePhone: (id, data) => {
-    return new Promise((resolve, reject) => {
-      connection.query('UPDATE accountphone SET ? WHERE id = ?', [data, id], (error, results) => {
-        if (!error) {
-          resolve(results)
-        } else {
-          reject(error)
-        }
-      })
-    })
-  },
+  }
 }
 
 module.exports = phone

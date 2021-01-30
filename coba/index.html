@@ -1,22 +1,4 @@
-const nodemailer = require('nodemailer')
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USERNAME, // generated ethereal user
-    pass: process.env.EMAIL_PASSWORD, // generated ethereal password
-  },
-});
-
-exports.sendEmail = () =>{
-    return new Promise((resolve, reject)=>{
-        host=process.env.FRONTEND_URL
-        link=host+'/verify?sendid='+senddata.sendid;
-        const message = {
-            from: process.env.EMAIL_USERNAME,
-            to: senddata.email,
-            subject: "ACTIVATION EMAIL", 
-            html : `<!DOCTYPE html>
+<!DOCTYPE html>
             <html lang="en">
             <head>
               <meta charset="UTF-8">
@@ -42,6 +24,8 @@ exports.sendEmail = () =>{
                   background-color: #dbe0ff;
                   padding-top: 2%;
                   padding-bottom: 2%;
+                  align-items: center;
+                  text-align: center;
               }
               button {
                 height: 57px;
@@ -59,9 +43,6 @@ exports.sendEmail = () =>{
                 font-size: 18px;
                 color: #FFFFFF;
             }
-            .btn {
-                text-align: center;
-            }
             </style>
             </head>
             <body>
@@ -69,19 +50,7 @@ exports.sendEmail = () =>{
               <div class="wrapper">
                 <h3>Hi ${senddata.username}, Welcome to Zwallet!</h3>
                 <h4>Thanks for signing up with us! <br> Please Verify your Email by clicking the button below:</h4>
-              </div>
-              <div class="btn">
-                <button><a href=${link}>Verify My Email</a></button>
+                <button> <a href="http://localhost:8080/verify?sendid=${senddata.sendid}">Verify My Email</a></button>
               </div>
             </body>
-            </html>`, // html body
-        }
-        transporter.sendMail(message, (error, info) => {
-            if (error) {
-                reject(error)
-            } else {
-                resolve(info)
-            }
-        });
-    })
-}
+            </html>
