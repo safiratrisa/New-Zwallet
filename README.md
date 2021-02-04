@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Built With](#Built With)
+- [Built With](#built-with)
 - [Requirements](#Requirements)
 - [How to run the app ?](#How to run the app ?)
 - [Set up .env file](#Set up .env file)
