@@ -79,4 +79,4 @@ EMAIL_PASSWORD = [your_email_password]
 
 ## Related Project
 
-- [`Frontend-Kebonid`](https://github.com/safiratrisa/Zwallet-Vue)
+- [`Frontend-Zwallet`](https://github.com/safiratrisa/Zwallet-Vue)
