@@ -22,74 +22,61 @@ Zwallet is a banking application built with the implementation of VueJs, NodeJs 
 
 ## Set up .env file
 Open .env file on your favorite code editor, and copy paste this code below :
+
+PORT = 5000
+DB_HOST = localhost
+DB_USER = root
+DB_PASSWORD = ""
+DB_NAME = zwallet3
+BASE_URL = http://localhost:5000
+FRONTEND_URL = http://localhost:8080
+SECRET_KEY = cuX3oIxvBPd1U29Kf5AR1OxPm8b9Tyot
+EMAIL_USERNAME = cobaemailweb5@gmail.com
+EMAIL_PASSWORD = HaloHaloBandung
+
 ```
 DB_HOST=[your_database_host]
-DB_PORT=[your_database_port]
 DB_USER=[your_database_username]
-DB_PASS=[your_database_pass]
-DB_NAME=kebon_id
-
-EMAIL=[email_for_send_forgot_password_otp]
-EMAIL_PASS=[your_email_password]
-
-BASE_URL=http://localhost:8080/
-PORT=8080
-
-SECRET=[jwt_secret_key]
+DB_PASSWORD=[your_database_pass]
+DB_NAME=zwallet3
+BASE_URL=http://localhost:5000
+FRONTEND_URL = http://localhost:8080
+SECRET_KEY=[jwt_secret_key]
+EMAIL_USERNAME = [email_for_send_forgot_password_otp]
+EMAIL_PASSWORD = [your_email_password]
 ```
 
 ## End Point
 
-**1. Auth**
-  * **POST** `/api/v1/auth/register`
-  * **POST** `/api/v1/auth/login`
-  * **POST** `/api/v1/auth/forgot`
-  * **POST** `/api/v1/auth/reset`
-  * **PUT**  `/api/v1/auth/update`
+**1. USERS INFORMATION**
+  * **POST** `/users/register`
+  * **POST** `/users/login`
+  * **PUT** `/users/verify/:sendid`
+  * **PUT** `/users/reset`
+  * **PUT** `/users/resetpassword`
+  * **PUT**  `/users/:id/updatepassword`
+  * **PUT**  `/users/:id/updatepin`
+  * **PUT**  `/users/:id/updatefirstname`
+  * **PUT**  `/users/:id/updatephone`
+  * **PUT**  `/users/:id/updatelastname`
+  * **PUT**  `/users/:id/updateemail`
+  * **PUT**  `/users/:id/updateimage`
+  * **GET**  `/users/:id/profile`
+  * **GET**  `/users/:id/balance`
+  * **GET**  `/users/:id/friends`
+  * **GET**  `/users/:id/transactions-history`
+  * **GET**  `/phone/:id/user`
+  * **POST** `/phone`
+  * **DELETE** `/phone/:id`
 
+**2. USERS TRANSFER**
+  * **POST** `/users/gotransfer/:idsend/:idrec`
+  * **POST** `/users/gotopup/:idrec`
+  * **GET** `/transactions/status`
+  * **GET** `/transactions/:id`
 
-**2. Cart**
-  * **POST** `/api/v1/cart/`
-  * **GET** `/api/v1/cart/:id`
-  * **DELETE** `/api/v1/cart/:id`
-  * **PUT** `/api/v1/cart/:id`
-
-**3. Customers**
-  * **PUT** `/api/v1/customers/:id`
-  * **PUT** `/api/v1/customers/editPhoto/:id`
-  * **GET** `/api/v1/customers/:id`
-
-**4. Message**
-  * **GET** `/api/v1/message/:id`
-  * **POST** `/api/v1/message/`
-
-**5. Product**
-  * **GET** `/api/v1/product/`
-  * **GET** `/api/v1/product/:id`
-  * **POST** `/api/v1/product/`
-  * **PATCH** `/api/v1/product/:id`
-  * **DELETE** `/api/v1/product/:id`
-
-**6. Store**
-  * **GET** `/api/v1/store/`
-  * **GET** `/api/v1/store/:id`
-  * **POST** `/api/v1/store/`
-  * **PATCH** `/api/v1/store/:id`
-  * **DELETE** `/api/v1/store/:id`
-
-**7. Transaction**
-  * **GET** `/api/v1/transaction/:id`
-  * **GET** `/api/v1/transaction/latest/:id`
-  * **POST** `/api/v1/transaction/`
-  * **DELETE** `/api/v1/transaction/:id`
-
-**8. Wishlist**
-  * **POST** `/api/v1/wishlist/`
-  * **GET** `/api/v1/wishlist/:id`
-  * **GET** `/api/v1/wishlist/`
-  * **DELETE** `/api/v1/wishlist/:id`
 
 
 ## Related Project
 
-- [`Frontend-Kebonid`](https://github.com/AdmiralYuuShi/Frontend-Kebonid)
+- [`Frontend-Kebonid`](https://github.com/safiratrisa/Zwallet-Vue)
