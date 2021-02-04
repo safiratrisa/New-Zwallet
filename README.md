@@ -1,6 +1,6 @@
 <h1 align="center">Backend - Zwallet</h1>
 <p align="center">
-  <img width="250" src="https://raw.githubusercontent.com/AdmiralYuuShi/Frontend-Kebonid/master/src/assets/logo_transparent.png"/>
+  ![Zwallet](https://user-images.githubusercontent.com/41407774/106854460-e3cbd200-66ed-11eb-9d44-12eaa38a05f7.png)
 </p>
 
 
@@ -98,42 +98,3 @@ SECRET=[jwt_secret_key]
 ## Related Project
 
 - [`Frontend-Kebonid`](https://github.com/AdmiralYuuShi/Frontend-Kebonid)
-
-## Contributors
-
-<center>
-  <table>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/kurniawandenyy">
-          <img width="100" src="https://avatars1.githubusercontent.com/u/48039021?s=460&v=4" alt="Deny Kurniawan"><br/>
-          <sub><b>Deny Kurniawan</b></sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/AdmiralYuuShi">
-          <img width="100" src="https://avatars0.githubusercontent.com/u/47265524?s=460&v=4" alt="Hapid Moch Jamil"><br/>
-          <sub><b>Hapid Moch Jamil</b></sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/ihsan2">
-          <img width="100" src="https://avatars1.githubusercontent.com/u/39041267?s=460&v=4" alt="Nur Ihsan"><br/>
-          <sub><b>Nur Ihsan</b></sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/alfatahh54">
-          <img width="100" src="https://avatars2.githubusercontent.com/u/55615664?s=460&v=4" alt="Alfatah Hidayat"><br/>
-          <sub><b>Alfatah Hidayat</b></sub>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/VikaVP">
-          <img width="100" src="https://avatars3.githubusercontent.com/u/52590370?s=460&v=4" alt="Vika Vitaloka P"><br/>
-          <sub><b>Vika Vitaloka P</b></sub>
-        </a>
-      </td>
-    </tr>
-  </table>
-</center>
