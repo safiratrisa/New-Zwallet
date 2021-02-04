@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Introduction](#Introduction)
+- [Introduction](#introduction)
 - [Built With](#Built With)
 - [Requirements](#Requirements)
 - [How to run the app ?](#How to run the app ?)
