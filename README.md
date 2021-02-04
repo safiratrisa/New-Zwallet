@@ -23,17 +23,6 @@ Zwallet is a banking application built with the implementation of VueJs, NodeJs 
 ## Set up .env file
 Open .env file on your favorite code editor, and copy paste this code below :
 
-PORT = 5000
-DB_HOST = localhost
-DB_USER = root
-DB_PASSWORD = ""
-DB_NAME = zwallet3
-BASE_URL = http://localhost:5000
-FRONTEND_URL = http://localhost:8080
-SECRET_KEY = cuX3oIxvBPd1U29Kf5AR1OxPm8b9Tyot
-EMAIL_USERNAME = cobaemailweb5@gmail.com
-EMAIL_PASSWORD = HaloHaloBandung
-
 ```
 DB_HOST=[your_database_host]
 DB_USER=[your_database_username]
