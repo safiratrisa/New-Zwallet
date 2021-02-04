@@ -5,8 +5,8 @@
 - [Introduction](#introduction)
 - [Built With](#built-with)
 - [Requirements](#requirements)
-- [How to run the app ?](#How-to-run-the-app-?)
-- [Set up .env file](#Set-up-.env-file)
+- [How to run the app ?](#How-to-run-the-app)
+- [Set up .env file](#Set-up-env-file)
 - [End Point](#End-Point)
 - [Related Project](#Related-Project)
 
