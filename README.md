@@ -1,7 +1,5 @@
 <h1 align="center">Backend - Zwallet</h1>
-<p align="center">
   ![Zwallet](https://user-images.githubusercontent.com/41407774/106854460-e3cbd200-66ed-11eb-9d44-12eaa38a05f7.png)
-</p>
 
 
 Kebon.id is a backend for Kebon.id frontend application. Built with NodeJs using the ExpressJs Framework.
