@@ -1,9 +1,6 @@
 <h1 align="center">Backend - Zwallet</h1>
-  ![Zwallet](https://user-images.githubusercontent.com/41407774/106854460-e3cbd200-66ed-11eb-9d44-12eaa38a05f7.png)
 
-
-Kebon.id is a backend for Kebon.id frontend application. Built with NodeJs using the ExpressJs Framework.
-Express.js is a web application framework for Node.js. [More about Express](https://en.wikipedia.org/wiki/Express.js)
+Zwallet is a banking application built with the implementation of VueJs, NodeJs with Express framework, and MySQL. It is an application that allows you to transfer your money to another user that is registered in the database.
 ## Built With
 [![Express.js](https://img.shields.io/badge/Express.js-4.x-orange.svg?style=rounded-square)](https://expressjs.com/en/starter/installing.html)
 [![Node.js](https://img.shields.io/badge/Node.js-v.10.16-green.svg?style=rounded-square)](https://nodejs.org/)
