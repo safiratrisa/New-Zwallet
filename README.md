@@ -15,7 +15,7 @@ Zwallet is a banking application built with the implementation of VueJs, NodeJs 
 2. Type `npm install`
 3. Make new file a called **.env**, set up first [here](#set-up-env-file)
 4. Turn on Web Server and MySQL can using Third-party tool like xampp, etc.
-5. Create a database with the name zwallet3, and Import file [zwallet3.sql](https://drive.google.com/file/d/1srv5XzNspZQt5Ucpp9YAKu3EgP-EW5GP/view?usp=sharing) to **phpmyadmin**
+5. Create a database with the name zwallet3, and Import file [zwallet3.sql](https://drive.google.com/file/d/1AmZEFv80fkl84suY21zm_NY__omJU1mf/view?usp=sharing) to **phpmyadmin**
 6. Open Postman desktop application or Chrome web app extension that has installed before
 7. Choose HTTP Method and enter request url.
 8. You can see all the end point [here](#end-point)
