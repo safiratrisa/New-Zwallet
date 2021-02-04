@@ -5,7 +5,7 @@
 - [Introduction](#introduction)
 - [Built With](#built-with)
 - [Requirements](#requirements)
-- [How to run the app ?](#How-to-run-the-app)
+- [Running the Application](#running-the-application)
 - [Set up .env file](#Set-up-env-file)
 - [End Point](#End-Point)
 - [Related Project](#Related-Project)
@@ -22,7 +22,7 @@ Zwallet is a banking application built with the implementation of VueJs, NodeJs 
 2. <a href="https://www.getpostman.com/">Postman</a>
 3. Web Server (ex. localhost)
 
-## How to run the app ?
+## Running the Application
 1. Open app's directory in CMD or Terminal
 2. Type `npm install`
 3. Make new file a called **.env**, set up first [here](#set-up-env-file)
