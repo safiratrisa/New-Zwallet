@@ -4,11 +4,11 @@
 
 - [Introduction](#introduction)
 - [Built With](#built-with)
-- [Requirements](#Requirements)
-- [How to run the app ?](#How to run the app ?)
-- [Set up .env file](#Set up .env file)
-- [End Point](#End Point)
-- [Related Project](#Related Project)
+- [Requirements](#requirements)
+- [How to run the app ?](#How-to-run-the-app-?)
+- [Set up .env file](#Set-up-.env-file)
+- [End Point](#End-Point)
+- [Related Project](#Related-Project)
 
 ## Introduction
 Zwallet is a banking application built with the implementation of VueJs, NodeJs with Express framework, and MySQL. It is an application that allows you to transfer your money to another user that is registered in the database.
