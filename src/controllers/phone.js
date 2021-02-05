@@ -22,10 +22,12 @@ const phone = {
     const data = { phoneNumber, accountid_phone }
     insertPhone(data)
       .then(result => {
+        console.log('berhasil')
         const resultPhone = result
         helpers.response(res, resultPhone, 201, null)
       })
       .catch((err) => {
+        console.log('gagal')
         return helpers.response(res, null, 500, { message: 'problem with database' })
       })
   },
