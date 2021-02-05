@@ -8,6 +8,7 @@ const fs = require('fs');
 const crypto = require('crypto')
 const {pagination} = require('../helpers/pagination')
 const {paginationTrans} = require('../helpers/paginationtrans')
+const {v4: uuidv4 } = require('uuid')
 // const redis = require("redis");
 // const client = redis.createClient();
 
@@ -74,6 +75,7 @@ const users = {
         bcrypt.hash(password, salt, function(err, hash1) {
           bcrypt.hash(pin, salt, function(err, hash2) {
             const data = {
+              id: uuidv4(),
               firstname: ' ',
               lastname: ' ',
               username,
